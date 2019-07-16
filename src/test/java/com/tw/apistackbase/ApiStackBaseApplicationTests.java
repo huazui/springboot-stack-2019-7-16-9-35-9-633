@@ -27,30 +27,30 @@ import org.springframework.test.web.servlet.MockMvc;
 public class ApiStackBaseApplicationTests {
 	@Autowired
 	private MockMvc mockMvc;
-	@Test
-	public void shouldReturnAllEmployee() throws Exception {
-		this.mockMvc.perform(get("/employees")).andDo(print()).andExpect(status().isOk())
-				.andExpect(content().string(containsString("1 zhangsan male,2 xiaofang female.")));
+//	@Test
+//	public void shouldReturnAllEmployee() throws Exception {
+//		this.mockMvc.perform(get("/employees")).andDo(print()).andExpect(status().isOk())
+//				.andExpect(content().string(containsString("1 zhangsan male,2 xiaofang female.")));
+//
+//	}
+//	@Test
+//	public void shouldReturnAEmployee() throws Exception {
+//		this.mockMvc.perform(get("/employees/1")).andDo(print()).andExpect(status().isOk())
+//				.andExpect(content().string(containsString("1 zhangsan male.")));
 
-	}
-	@Test
-	public void shouldReturnAEmployee() throws Exception {
-		this.mockMvc.perform(get("/employees/1")).andDo(print()).andExpect(status().isOk())
-				.andExpect(content().string(containsString("1 zhangsan male.")));
-
-	}
+//	}
 //	@Test
 //	public void shouldReturnPageEmployee() throws Exception {
 //		this.mockMvc.perform(get("/employees/?Page=0&size=1")).andDo(print()).andExpect(status().isOk())
 //				.andExpect(content().string(containsString("1 zhangsan male,2 xiaofang female.")));
 //
 //	}
-//	@Test
-//	public void shouldDeleteEmployee() throws Exception {
-//		this.mockMvc.perform(put("/employees/1")).andDo(print()).andExpect(status().isOk())
-//				.andExpect(content().string(containsString("2 xiaofang female.")));
-//
-//	}
+	@Test
+	public void shouldDeleteEmployee() throws Exception {
+		this.mockMvc.perform(put("/employees/1")).andDo(print()).andExpect(status().isOk())
+				.andExpect(content().string(containsString("2 xiaofang female.")));
+
+	}
 	}
 
 
