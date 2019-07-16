@@ -50,6 +50,12 @@ public class ApiStackBaseApplicationTests {
 				.andExpect(content().string(containsString("2 xiaofang female.")));
 
 	}
+	@Test
+	public void shouldPutEmployee() throws Exception {
+		this.mockMvc.perform(put("/employees/1")).andDo(print()).andExpect(status().isOk())
+				.andExpect(content().string(containsString("1 zhangsan female.2 xiaofang female.")));
+
+	}
 	}
 
 
