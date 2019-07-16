@@ -67,18 +67,31 @@ public class EmployeeResource {
 //            result += employees.get(employees.size()-1).getEmployeeID() + " " + employees.get(employees.size()-1).getName() + " " + employees.get(employees.size()-1).getSex() + ".";
 //            return result;
 //        }
-    @DeleteMapping("/{id}")
+//    @DeleteMapping("/{id}")
+//    public  @ResponseBody String getAdd(@PathVariable("id") int id) {
+//        List<Employee> employees = getEmployeeList();
+//        List<Employee>newList=employees.stream().filter(item->item.getEmployeeID()==id).collect(Collectors.toList());
+//        String result="";
+//        for (int i = 0; i < newList.size() - 1; i++) {
+//            result += employees.get(i).getEmployeeID() + " " + employees.get(i).getName() + " " + employees.get(i).getSex() + ",";
+//        }
+//        result += employees.get(employees.size()-1).getEmployeeID() + " " + employees.get(employees.size()-1).getName() + " " + employees.get(employees.size()-1).getSex() + ".";
+//        return result;
+//    }
+    //make sex to "femal"when id is"1"
+    @PutMapping("/{id}")
     public  @ResponseBody String getAdd(@PathVariable("id") int id) {
         List<Employee> employees = getEmployeeList();
-        List<Employee>newList=employees.stream().filter(item->item.getEmployeeID()==id).collect(Collectors.toList());
         String result="";
-        for (int i = 0; i < newList.size() - 1; i++) {
-            result += employees.get(i).getEmployeeID() + " " + employees.get(i).getName() + " " + employees.get(i).getSex() + ",";
+        for (int i = 0; i < employees.size() ; i++) {
+            if(employees.get(i).getEmployeeID()==id)
+                result += employees.get(i).getEmployeeID() + " " + employees.get(i).getName() + " female" + ".";
+            else {
+                result += employees.get(i).getEmployeeID() + " " + employees.get(i).getName() + " " + employees.get(i).getSex() + ".";
+            }
         }
-        result += employees.get(employees.size()-1).getEmployeeID() + " " + employees.get(employees.size()-1).getName() + " " + employees.get(employees.size()-1).getSex() + ".";
-        return result;
+         return result;
     }
-
 
 
 }
