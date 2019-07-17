@@ -36,17 +36,27 @@ public class HelloResource {
        companyList.add(company6);
        return  companyList;
    }
-
-    public List<Employee> getEmployees() {
-        employeeList.add(employee1);
-        employeeList.add(employee2);
-        return employeeList;
+    public List<Employee>getEmployees(){
+       employeeList.add(employee1);
+       employeeList.add(employee2);
+       return employeeList;
     }
-
     @GetMapping()
-public ResponseEntity<List<Company>>getAllCompany(){
-    List<Company> companies=getCompany();
-    return ResponseEntity.ok().body(companies);
+//wow I    finisg it!!!!!!!!!
+    public @ResponseBody String getSpecificPageCompany(@RequestParam("page") int page, @RequestParam("pageSize") int pageSize) {
+
+        List<Company> returnList=getCompany();
+        String result="";
+        for(int i=page;i<=pageSize;i++){
+            result +=returnList.get(i).getCompanyID()+" "+returnList.get(i).getName()+".";
+        }
+        return result;
+    }
+//
+    @GetMapping
+    public ResponseEntity<List<Company>>getAllCompany(){
+       List<Company> companies=getCompany();
+       return ResponseEntity.ok().body(companies);
 }
 @GetMapping("/{id}")
 public ResponseEntity getACompany(@PathVariable("id") int id) {
@@ -60,18 +70,8 @@ public ResponseEntity getACompany(@PathVariable("id") int id) {
     }
     return ResponseEntity.ok().body(companies);
 }
-    //I can't finish it!!!!!!
-@GetMapping(path = "?page={page}&pageSize={pageSize}")
 
-    public @ResponseBody String getSpecificPageEmployees(@RequestParam("page") int page, @RequestParam("pageSize") int pageSize) {
 
-            List<Company> returnList=getCompany();
-           String result="";
-            for(int i=page;i<=pageSize+page-1;i++){
-              result +=returnList.get(i).getCompanyID()+" "+returnList.get(i).getName()+".";
-            }
-        return result;
-    }
     //
 @GetMapping("/{id}")
         public ResponseEntity getEmployees1(@PathVariable("id") int id){
