@@ -55,72 +55,72 @@ public class HelloResource {
         return result;
     }
 
-//    @GetMapping
-//    public ResponseEntity<List<Company>>getAllCompany(){
-//       List<Company> companies=getCompany();
-//       return ResponseEntity.ok().body(companies);
-//}
-//@GetMapping("/{id}")
-//public ResponseEntity getACompany(@PathVariable("id") int id) {
-//
-//    Company result = new Company();
-//    List<Company> companies = getCompany();
-//    for (int i = 0; i < companies.size(); i++) {
-//        if (companies.get(i).getCompanyID() == id) {
-//            result = companyList.get(i);
-//        }
-//    }
-//    return ResponseEntity.ok().body(companies);
-//}
-//
-//
-//    //
-//@GetMapping("/{id}")
-//        public ResponseEntity getEmployees1(@PathVariable("id") int id){
-//    Company result = new Company();
-//    List<Company> companies = getCompany();
-//    List<Employee> employees = getEmployees();
-//    for (int i = 0; i < companies.size(); i++) {
-//        if (companies.get(i).getCompanyID() == id) {
-//            result = companyList.get(i);
-//        }
-//    }
-//    result.setEmployees(employees);
-//    List<Employee>getEmployeeOne=result.getEmployees();
-//    return ResponseEntity.ok().body(getEmployeeOne);
-//}
-//    @PostMapping()
-//    public ResponseEntity create(@RequestBody Company company){
-//        List<Company>companyList=getCompany();
-//        companyList.add(company);
-//        return ResponseEntity.status(HttpStatus.CREATED).build();
-//    }
-//    @PutMapping("/{id}")
-//    public ResponseEntity <Company>writenEmployee(@PathVariable("id") int id){
-//        List<Company> companies = getCompany();
-//        Company result=new Company();
-//        for (int i = 0; i < companies.size(); i++) {
-//            if (companies.get(i).getCompanyID() == id) {
-//                result = companyList.get(i);
-//            }
-//        }
-//        result.setName("new Name");
-//        return ResponseEntity.ok().body(result);
-//    }
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity delete(@PathVariable("id") int id) {
-//        List<Company> companies = getCompany();
-//        List<Employee> employees = getEmployees();
-//       companies.get(0).setEmployees(employees);
-//       Company result=new Company();
-//        for (int i = 0; i < companies.size(); i++) {
-//            if (companies.get(i).getCompanyID() == id) {
-//                result = companyList.get(i);
-//            }
-//        }
-//        result.setEmployees(null);
-//        return ResponseEntity.status(HttpStatus.CREATED).build();
-//    }
+   @GetMapping
+   public ResponseEntity<List<Company>>getAllCompany(){
+      List<Company> companies=getCompany();
+      return ResponseEntity.ok().body(companies);
+}
+@GetMapping("/{id}")
+public ResponseEntity getACompany(@PathVariable("id") int id) {
+
+   Company result = new Company();
+   List<Company> companies = getCompany();
+   for (int i = 0; i < companies.size(); i++) {
+       if (companies.get(i).getCompanyID() == id) {
+           result = companyList.get(i);
+       }
+   }
+   return ResponseEntity.ok().body(companies);
+}
+
+
+   //
+@GetMapping("/{id}")
+       public ResponseEntity getEmployees1(@PathVariable("id") int id){
+   Company result = new Company();
+   List<Company> companies = getCompany();
+   List<Employee> employees = getEmployees();
+   for (int i = 0; i < companies.size(); i++) {
+       if (companies.get(i).getCompanyID() == id) {
+           result = companyList.get(i);
+       }
+   }
+   result.setEmployees(employees);
+   List<Employee>getEmployeeOne=result.getEmployees();
+   return ResponseEntity.ok().body(getEmployeeOne);
+}
+   @PostMapping()
+   public ResponseEntity create(@RequestBody Company company){
+       List<Company>companyList=getCompany();
+       companyList.add(company);
+       return ResponseEntity.status(HttpStatus.CREATED).build();
+   }
+   @PutMapping("/{id}")
+   public ResponseEntity <Company>writenEmployee(@PathVariable("id") int id){
+       List<Company> companies = getCompany();
+       Company result=new Company();
+       for (int i = 0; i < companies.size(); i++) {
+           if (companies.get(i).getCompanyID() == id) {
+               result = companyList.get(i);
+           }
+       }
+       result.setName("new Name");
+       return ResponseEntity.ok().body(result);
+   }
+   @DeleteMapping("/{id}")
+   public ResponseEntity delete(@PathVariable("id") int id) {
+       List<Company> companies = getCompany();
+       List<Employee> employees = getEmployees();
+      companies.get(0).setEmployees(employees);
+      Company result=new Company();
+       for (int i = 0; i < companies.size(); i++) {
+           if (companies.get(i).getCompanyID() == id) {
+               result = companyList.get(i);
+           }
+       }
+       result.setEmployees(null);
+       return ResponseEntity.status(HttpStatus.CREATED).build();
+   }
 
 }
 =======
@@ -180,72 +180,72 @@ public class HelloResource {
         return result;
     }
 
-//    @GetMapping
-//    public ResponseEntity<List<Company>>getAllCompany(){
-//       List<Company> companies=getCompany();
-//       return ResponseEntity.ok().body(companies);
-//}
-//@GetMapping("/{id}")
-//public ResponseEntity getACompany(@PathVariable("id") int id) {
-//
-//    Company result = new Company();
-//    List<Company> companies = getCompany();
-//    for (int i = 0; i < companies.size(); i++) {
-//        if (companies.get(i).getCompanyID() == id) {
-//            result = companyList.get(i);
-//        }
-//    }
-//    return ResponseEntity.ok().body(companies);
-//}
-//
-//
-//    //
-//@GetMapping("/{id}")
-//        public ResponseEntity getEmployees1(@PathVariable("id") int id){
-//    Company result = new Company();
-//    List<Company> companies = getCompany();
-//    List<Employee> employees = getEmployees();
-//    for (int i = 0; i < companies.size(); i++) {
-//        if (companies.get(i).getCompanyID() == id) {
-//            result = companyList.get(i);
-//        }
-//    }
-//    result.setEmployees(employees);
-//    List<Employee>getEmployeeOne=result.getEmployees();
-//    return ResponseEntity.ok().body(getEmployeeOne);
-//}
-//    @PostMapping()
-//    public ResponseEntity create(@RequestBody Company company){
-//        List<Company>companyList=getCompany();
-//        companyList.add(company);
-//        return ResponseEntity.status(HttpStatus.CREATED).build();
-//    }
-//    @PutMapping("/{id}")
-//    public ResponseEntity <Company>writenEmployee(@PathVariable("id") int id){
-//        List<Company> companies = getCompany();
-//        Company result=new Company();
-//        for (int i = 0; i < companies.size(); i++) {
-//            if (companies.get(i).getCompanyID() == id) {
-//                result = companyList.get(i);
-//            }
-//        }
-//        result.setName("new Name");
-//        return ResponseEntity.ok().body(result);
-//    }
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity delete(@PathVariable("id") int id) {
-//        List<Company> companies = getCompany();
-//        List<Employee> employees = getEmployees();
-//       companies.get(0).setEmployees(employees);
-//       Company result=new Company();
-//        for (int i = 0; i < companies.size(); i++) {
-//            if (companies.get(i).getCompanyID() == id) {
-//                result = companyList.get(i);
-//            }
-//        }
-//        result.setEmployees(null);
-//        return ResponseEntity.status(HttpStatus.CREATED).build();
-//    }
+   @GetMapping
+   public ResponseEntity<List<Company>>getAllCompany(){
+      List<Company> companies=getCompany();
+      return ResponseEntity.ok().body(companies);
+}
+@GetMapping("/{id}")
+public ResponseEntity getACompany(@PathVariable("id") int id) {
+
+   Company result = new Company();
+   List<Company> companies = getCompany();
+   for (int i = 0; i < companies.size(); i++) {
+       if (companies.get(i).getCompanyID() == id) {
+           result = companyList.get(i);
+       }
+   }
+   return ResponseEntity.ok().body(companies);
+}
+
+
+   //
+@GetMapping("/{id}")
+       public ResponseEntity getEmployees1(@PathVariable("id") int id){
+   Company result = new Company();
+   List<Company> companies = getCompany();
+   List<Employee> employees = getEmployees();
+   for (int i = 0; i < companies.size(); i++) {
+       if (companies.get(i).getCompanyID() == id) {
+           result = companyList.get(i);
+       }
+   }
+   result.setEmployees(employees);
+   List<Employee>getEmployeeOne=result.getEmployees();
+   return ResponseEntity.ok().body(getEmployeeOne);
+}
+   @PostMapping()
+   public ResponseEntity create(@RequestBody Company company){
+       List<Company>companyList=getCompany();
+       companyList.add(company);
+       return ResponseEntity.status(HttpStatus.CREATED).build();
+   }
+   @PutMapping("/{id}")
+   public ResponseEntity <Company>writenEmployee(@PathVariable("id") int id){
+       List<Company> companies = getCompany();
+       Company result=new Company();
+       for (int i = 0; i < companies.size(); i++) {
+           if (companies.get(i).getCompanyID() == id) {
+               result = companyList.get(i);
+           }
+       }
+       result.setName("new Name");
+       return ResponseEntity.ok().body(result);
+   }
+   @DeleteMapping("/{id}")
+   public ResponseEntity delete(@PathVariable("id") int id) {
+       List<Company> companies = getCompany();
+       List<Employee> employees = getEmployees();
+      companies.get(0).setEmployees(employees);
+      Company result=new Company();
+       for (int i = 0; i < companies.size(); i++) {
+           if (companies.get(i).getCompanyID() == id) {
+               result = companyList.get(i);
+           }
+       }
+       result.setEmployees(null);
+       return ResponseEntity.status(HttpStatus.CREATED).build();
+   }
 
 }
->>>>>>> e2530debe507a240d8cdc5d7562fe781077fa299
+
